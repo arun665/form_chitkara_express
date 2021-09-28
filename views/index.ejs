@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+body{
+    background-color: rgb(218, 218, 218);
+}h1{
+    color:blue;
+    text-decoration: underline;
+    text-align: center;
+    margin-top:5vh;
+    
+}
+form{
+    background-color: cadetblue;
+    padding:5%;
+    width:80%;
+    margin-left: 10%;;
+    border:1px solid grey;
+    border-radius:10px;
+}
+label{
+    color:white;
+}
+</style>
+<body>
+<div class="container">
+    <h1>
+<%= title %> </h1> 
+</div>
+<br/>
+<hr></hr>
+<div class="container">
+<form class="form" action="/submit" method="post">
+    <div class="form-group">
+    <input class="form-control" type="email"  placeholder="email" name="username" required/></div>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="password" name="password" minlength="5"/></div>
+
+
+    <div class="row"> 
+    <div class="form-group col">
+        <label>Entry time</label>
+    <input type="time" class="form-control" placeholder="time" name="entry_time" /></div>
+    <div class="form-group col">
+        <label>Leave time </label>
+    <input type="time" class="form-control" placeholder="password" name="leave_time" /></div>
+</div>
+    
+    <div class="form-group">
+    <input type="tel" class="form-control" placeholder="phone" name="phone"      pattern="[0-9]{3}[0-9]{3}[0-9]{4}"/></div>
+    <div class="form-group">
+    
+
+
+    
+    <button type="submit" class="btn btn-secondary" >submit data</button>
+</form>
+</div>
+</body>
+</html>
