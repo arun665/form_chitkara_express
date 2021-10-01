@@ -34,32 +34,6 @@ body('password').isLength({ min: 5 })  , body('phone').isMobilePhone(),(req,res)
     kitty.save().then(() => {console.log('meow');
 
 
-    var nodemailer = require("nodemailer");
- 
-    var sender = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: "arunsharmamoh@gmail.com",
-        pass: 'Arun5207@'
-      }
-    });
-     
-    var mail = {
-      from: "username@gmail.com",
-      to: "receiver's_username@gmail.com",
-      subject: "Sending Email using Node.js",
-      text: "That was easy!"
-    };
-     
-    sender.sendMail(mail, function(error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Email sent successfully: "
-                     + info.response);
-      }
-    });
- 
 
 
 
