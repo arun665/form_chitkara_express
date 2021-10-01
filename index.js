@@ -6,6 +6,11 @@ app.set('views','./views');
 const mongoose=require('mongoose');
 app.use(bodyParser.urlencoded({ extended: false }));
  var Customer = require('./schema.js');
+ var products = require('./routes/products');
+
+// ...
+
+app.use('/products', products);
 // parse application/json
 // ...rest of the initial code omitted for simplicity.
 const { body, validationResult } = require('express-validator');
@@ -53,6 +58,6 @@ console.log(err);
     
 })
 
-app.listen(3000,()=>{
+app.listen(3000||process.env.PORT,()=>{
     console.log("sever running on port");
 });

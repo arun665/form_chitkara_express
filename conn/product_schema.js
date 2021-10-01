@@ -11,40 +11,38 @@ mongoose.connect("mongodb://127.0.0.1:27017/mongodb_chitkara_form")
 });
 
 const user = new mongoose.Schema({
-name:String,
-email:String,
-address:[
-    {
-    street:String,
-    state:String,
-    country:String
-    }
-]
 
+
+
+url:String,
+desc:String,
+title:String,
+Price:String,
+review:[]
 })
 
 
 
 
-const Customer = mongoose.model('User', user);
+const Product = mongoose.model('Products', user);
 
 async function add(){
 
-const User= await Customer.findById("6155f482dc5ea2ff8a61cd33");
-User.address.push({street:"arun sharma",state:"punava",country:"engklanf"});
+const User= new Product({url:"https://drop.ndtv.com/TECH/product_database/images/913201720152AM_635_iphone_x.jpeg?downsize=*:180",desc:"iphone",title:"iphone",price:"200"});
+
 await User.save((err)=>{
 if(err){
     console.log(err);
 
 }
 {
-console.log("added success")
+console.log("added product  success")
 }
 });
 
 }
 
-add();
 
 
-module.exports=Customer;
+
+module.exports=Product;
