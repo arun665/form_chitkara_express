@@ -6,11 +6,12 @@ app.set('views','./views');
 const mongoose=require('mongoose');
 app.use(bodyParser.urlencoded({ extended: false }));
  var Customer = require('./schema.js');
- var products = require('./routes/products');
+ //var products = require('./routes/products');
+
 
 // ...
 
-app.use('/products', products);
+//app.use('/products', products);
 // parse application/json
 // ...rest of the initial code omitted for simplicity.
 const { body, validationResult } = require('express-validator');
