@@ -18,17 +18,23 @@ url:String,
 desc:String,
 title:String,
 Price:String,
-review:[]
+reviews:[
+{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Review',
+}
+]
+
 })
 
 
 
 
-const Product = mongoose.model('Products', user);
+const Product = mongoose.model('Product', user);
 
 async function add(){
 
-const User= new Product({url:"https://drop.ndtv.com/TECH/product_database/images/913201720152AM_635_iphone_x.jpeg?downsize=*:180",desc:"iphone",title:"iphone",price:"200"});
+const User= new Product({url:"https://drop.ndtv.com/TECH/product_database/images/913201720152AM_635_iphone_x.jpeg?downsize=*:180",desc:"iphone",title:"iphone",Price:"200"});
 
 await User.save((err)=>{
 if(err){

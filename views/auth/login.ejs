@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
 
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
@@ -26,11 +25,23 @@ img{
 }
 </style>
 <body>
-  
-  <%- include("./navbar.ejs") %>
+  <%- include("../navbar.ejs") %>
 <div class="container">
+    <%- include("../flash.ejs") %>
+    <% if(error && error.length>0) {%>
+        <div class="alert alert-danger mb-3">
+      <h2><%=error%></h2>
+      
+      </div>
+      <%}%>
+      
   <h1> product page</h1>
 </div>
+
+<form action="/products">
+<button type="Submit" class="btn btn-outline-primary" > go to Product PAge </button>
+</form>
+
 <br/>
 <hr></hr>
 <div class="container-fluid">
@@ -38,35 +49,36 @@ img{
 
 <div class="row">
 
-    <% products.forEach(function(product){  %>
-
+  
 
 
   
   
   
-<div class="col-sm-4 col-md-4 col-6">
+<div class="col-sm-4 col-md-4 col-12">
+ 
 
-    <div class="card" style="width:400px">
-        <img class="card-img-top" src="<%= product.url %>" alt="Card image" style="width:100%">
-        <div class="card-body">
-          <h4 class="card-title"> <%= product.title %> </h4>
-          <p class="card-text"><%= product.desc %> </p>
+<div class="col-sm-8 col-md-8 col-12">
 
-
-          <form  action="/products/<%=product._id %>" method="get">
-          <input type="submit"  class="btn btn-primary">See Profile</input>
-          </form>
-
-        </div>
+  <form  action="login" method="POST">
+    <div class="form-group">
+      <label for="email">username</label>
+      <input type="text" class="form-control" name="username" placeholder="Enter rating" id="email" >
+    </div>
+    <div class="form-group">
+        <label for="email">password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter rating" id="password" >
       </div>
-      <br>
+    
+    <button type="submit" class="btn btn-primary" value="login">Submit</button>
+  </form>
+
+
+<h1> RATING</h1>
 
 
 
 </div>
-
-<%}) %> 
   
 
 </div>
